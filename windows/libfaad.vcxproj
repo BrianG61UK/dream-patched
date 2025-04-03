@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <ProjectName>faad_drm</ProjectName>
+    <ProjectGuid>{76AF9D0B-41B0-4870-8DFB-D805FA7239D9}</ProjectGuid>
+    <RootNamespace>libfaad</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>17.0.35913.81</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>..\libs\</OutDir>
+    <IntDir>Debug\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>..\libs\</OutDir>
+    <IntDir>Release\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <BuildLog>
+      <Path>$(IntDir)FaadBuildLog.htm</Path>
+    </BuildLog>
+    <PreBuildEvent>
+      <Command>copy faadconfig.h ..\..\faad2\config.h</Command>
+    </PreBuildEvent>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..\faad2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>HAVE_CONFIG_H;NEAACDECAPI=__stdcall;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <PrecompiledHeader />
+      <ProgramDataBaseFileName>$(IntDir)faad_vc90.pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <ProjectReference>
+      <LinkLibraryDependencies>true</LinkLibraryDependencies>
+    </ProjectReference>
+    <Lib>
+      <OutputFile>$(OutDir)$(ProjectName)d.lib</OutputFile>
+    </Lib>
+    <PostBuildEvent>
+      <Command>copy ..\..\faad2\include\neaacdec.h "$(OutDir)"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <BuildLog>
+      <Path>$(IntDir)FaadBuildLog.htm</Path>
+    </BuildLog>
+    <PreBuildEvent>
+      <Command>copy faadconfig.h ..\..\faad2\config.h</Command>
+    </PreBuildEvent>
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\..\faad2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>HAVE_CONFIG_H;NEAACDECAPI=__stdcall;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <ProjectReference>
+      <LinkLibraryDependencies>true</LinkLibraryDependencies>
+    </ProjectReference>
+    <Lib>
+      <AdditionalLibraryDirectories>$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
+    </Lib>
+    <PostBuildEvent>
+      <Command>copy ..\..\faad2\include\neaacdec.h "$(OutDir)"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\faad2\include\faad.h" />
+    <ClInclude Include="..\..\faad2\include\neaacdec.h" />
+    <ClInclude Include="..\..\faad2\libfaad\analysis.h" />
+    <ClInclude Include="..\..\faad2\libfaad\bits.h" />
+    <ClInclude Include="..\..\faad2\libfaad\cfft.h" />
+    <ClInclude Include="..\..\faad2\libfaad\cfft_tab.h" />
+    <ClInclude Include="..\..\faad2\libfaad\codebook\hcb.h" />
+    <ClInclude Include="..\..\faad2\libfaad\codebook\hcb_1.h" />
+    <ClInclude Include="..\..\faad2\libfaad\codebook\hcb_10.h" />
+    <ClInclude Include="..\..\faad2\libfaad\codebook\hcb_11.h" />
+    <ClInclude Include="..\..\faad2\libfaad\codebook\hcb_2.h" />
+    <ClInclude Include="..\..\faad2\libfaad\codebook\hcb_3.h" />
+    <ClInclude Include="..\..\faad2\libfaad\codebook\hcb_4.h" />
+    <ClInclude Include="..\..\faad2\libfaad\codebook\hcb_5.h" />
+    <ClInclude Include="..\..\faad2\libfaad\codebook\hcb_6.h" />
+    <ClInclude Include="..\..\faad2\libfaad\codebook\hcb_7.h" />
+    <ClInclude Include="..\..\faad2\libfaad\codebook\hcb_8.h" />
+    <ClInclude Include="..\..\faad2\libfaad\codebook\hcb_9.h" />
+    <ClInclude Include="..\..\faad2\libfaad\codebook\hcb_sf.h" />
+    <ClInclude Include="..\..\faad2\libfaad\common.h" />
+    <ClInclude Include="..\..\faad2\libfaad\decoder.h" />
+    <ClInclude Include="..\..\faad2\libfaad\drc.h" />
+    <ClInclude Include="..\..\faad2\libfaad\drm_dec.h" />
+    <ClInclude Include="..\..\faad2\libfaad\error.h" />
+    <ClInclude Include="..\..\faad2\libfaad\filtbank.h" />
+    <ClInclude Include="..\..\faad2\libfaad\fixed.h" />
+    <ClInclude Include="..\..\faad2\libfaad\huffman.h" />
+    <ClInclude Include="..\..\faad2\libfaad\ic_predict.h" />
+    <ClInclude Include="..\..\faad2\libfaad\iq_table.h" />
+    <ClInclude Include="..\..\faad2\libfaad\is.h" />
+    <ClInclude Include="..\..\faad2\libfaad\kbd_win.h" />
+    <ClInclude Include="..\..\faad2\libfaad\lt_predict.h" />
+    <ClInclude Include="..\..\faad2\libfaad\mdct.h" />
+    <ClInclude Include="..\..\faad2\libfaad\mdct_tab.h" />
+    <ClInclude Include="..\..\faad2\libfaad\mp4.h" />
+    <ClInclude Include="..\..\faad2\libfaad\ms.h" />
+    <ClInclude Include="..\..\faad2\libfaad\output.h" />
+    <ClInclude Include="..\..\faad2\libfaad\pns.h" />
+    <ClInclude Include="..\..\faad2\libfaad\ps_dec.h" />
+    <ClInclude Include="..\..\faad2\libfaad\ps_tables.h" />
+    <ClInclude Include="..\..\faad2\libfaad\pulse.h" />
+    <ClInclude Include="..\..\faad2\libfaad\rvlc.h" />
+    <ClInclude Include="..\..\faad2\libfaad\sbr_dct.h" />
+    <ClInclude Include="..\..\faad2\libfaad\sbr_dec.h" />
+    <ClInclude Include="..\..\faad2\libfaad\sbr_e_nf.h" />
+    <ClInclude Include="..\..\faad2\libfaad\sbr_fbt.h" />
+    <ClInclude Include="..\..\faad2\libfaad\sbr_hfadj.h" />
+    <ClInclude Include="..\..\faad2\libfaad\sbr_hfgen.h" />
+    <ClInclude Include="..\..\faad2\libfaad\sbr_huff.h" />
+    <ClInclude Include="..\..\faad2\libfaad\sbr_noise.h" />
+    <ClInclude Include="..\..\faad2\libfaad\sbr_qmf.h" />
+    <ClInclude Include="..\..\faad2\libfaad\sbr_qmf_c.h" />
+    <ClInclude Include="..\..\faad2\libfaad\sbr_syntax.h" />
+    <ClInclude Include="..\..\faad2\libfaad\sbr_tf_grid.h" />
+    <ClInclude Include="..\..\faad2\libfaad\sine_win.h" />
+    <ClInclude Include="..\..\faad2\libfaad\specrec.h" />
+    <ClInclude Include="..\..\faad2\libfaad\ssr.h" />
+    <ClInclude Include="..\..\faad2\libfaad\ssr_fb.h" />
+    <ClInclude Include="..\..\faad2\libfaad\ssr_ipqf.h" />
+    <ClInclude Include="..\..\faad2\libfaad\ssr_win.h" />
+    <ClInclude Include="..\..\faad2\libfaad\structs.h" />
+    <ClInclude Include="..\..\faad2\libfaad\syntax.h" />
+    <ClInclude Include="..\..\faad2\libfaad\tns.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\faad2\libfaad\bits.c" />
+    <ClCompile Include="..\..\faad2\libfaad\cfft.c" />
+    <ClCompile Include="..\..\faad2\libfaad\common.c" />
+    <ClCompile Include="..\..\faad2\libfaad\decoder.c" />
+    <ClCompile Include="..\..\faad2\libfaad\drc.c" />
+    <ClCompile Include="..\..\faad2\libfaad\drm_dec.c" />
+    <ClCompile Include="..\..\faad2\libfaad\error.c" />
+    <ClCompile Include="..\..\faad2\libfaad\filtbank.c" />
+    <ClCompile Include="..\..\faad2\libfaad\hcr.c" />
+    <ClCompile Include="..\..\faad2\libfaad\huffman.c" />
+    <ClCompile Include="..\..\faad2\libfaad\ic_predict.c" />
+    <ClCompile Include="..\..\faad2\libfaad\is.c" />
+    <ClCompile Include="..\..\faad2\libfaad\lt_predict.c" />
+    <ClCompile Include="..\..\faad2\libfaad\mdct.c" />
+    <ClCompile Include="..\..\faad2\libfaad\mp4.c" />
+    <ClCompile Include="..\..\faad2\libfaad\ms.c" />
+    <ClCompile Include="..\..\faad2\libfaad\output.c" />
+    <ClCompile Include="..\..\faad2\libfaad\pns.c" />
+    <ClCompile Include="..\..\faad2\libfaad\ps_dec.c" />
+    <ClCompile Include="..\..\faad2\libfaad\ps_syntax.c" />
+    <ClCompile Include="..\..\faad2\libfaad\pulse.c" />
+    <ClCompile Include="..\..\faad2\libfaad\rvlc.c" />
+    <ClCompile Include="..\..\faad2\libfaad\sbr_dct.c" />
+    <ClCompile Include="..\..\faad2\libfaad\sbr_dec.c" />
+    <ClCompile Include="..\..\faad2\libfaad\sbr_e_nf.c" />
+    <ClCompile Include="..\..\faad2\libfaad\sbr_fbt.c" />
+    <ClCompile Include="..\..\faad2\libfaad\sbr_hfadj.c" />
+    <ClCompile Include="..\..\faad2\libfaad\sbr_hfgen.c" />
+    <ClCompile Include="..\..\faad2\libfaad\sbr_huff.c" />
+    <ClCompile Include="..\..\faad2\libfaad\sbr_qmf.c" />
+    <ClCompile Include="..\..\faad2\libfaad\sbr_syntax.c" />
+    <ClCompile Include="..\..\faad2\libfaad\sbr_tf_grid.c" />
+    <ClCompile Include="..\..\faad2\libfaad\specrec.c" />
+    <ClCompile Include="..\..\faad2\libfaad\ssr.c" />
+    <ClCompile Include="..\..\faad2\libfaad\ssr_fb.c" />
+    <ClCompile Include="..\..\faad2\libfaad\ssr_ipqf.c" />
+    <ClCompile Include="..\..\faad2\libfaad\syntax.c" />
+    <ClCompile Include="..\..\faad2\libfaad\tns.c" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,843 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <ProjectGuid>{811EC90A-5D62-3003-B41E-AE7D035DE797}</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC70.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC70.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>17.0.35913.81</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>.\</OutDir>
+    <IntDir>Release\</IntDir>
+    <IgnoreImportLibrary>true</IgnoreImportLibrary>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>.\</OutDir>
+    <IntDir>windows\</IntDir>
+    <IgnoreImportLibrary>true</IgnoreImportLibrary>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <WarningLevel>0</WarningLevel>
+      <DefaultCharType>Unsigned</DefaultCharType>
+      <EnableErrorChecks>None</EnableErrorChecks>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>-Zm200 -EHsc -EHsc %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MaxSpeed</Optimization>
+      <AdditionalIncludeDirectories>..\libs\qwt;..\src\GUI-QT;..\libs;$(QTDIR)\include;moc\;..\src\GUI-QT\qt2;$(QTDIR)\mkspecs\win32-msvc2005;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>QT_NO_DEBUG;NDEBUG;_WINDOWS;WIN32;HAVE_SETUPAPI;USE_QT_GUI;HAVE_LIBZ;HAVE_LIBFAAD;USE_FAAD2_LIBRARY;HAVE_LIBHAMLIB;HAVE_RIG_PARSE_MODE;QT_DLL;QT_THREAD_SUPPORT;QT_ACCESSIBILITY_SUPPORT;QT_TABLET_SUPPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <PreprocessSuppressLineNumbers>false</PreprocessSuppressLineNumbers>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <AssemblerListingLocation>Release\</AssemblerListingLocation>
+      <ObjectFileName>Release\</ObjectFileName>
+      <ProgramDataBaseFileName>.\</ProgramDataBaseFileName>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat />
+      <DisableSpecificWarnings>4996;4996;4521;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>qt-mt3.lib;qtmain.lib;opengl32.lib;glu32.lib;qwt.lib;zdll.lib;fftw.lib;setupapi.lib;winmm.lib;wsock32.lib;faad_drm.lib;libhamlib-2.lib;kernel32.lib;user32.lib;gdi32.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;imm32.lib;winspool.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>Release\Dream.exe</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>$(QTDIR)\lib;../libs/qwt;../libs;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreSpecificDefaultLibraries>libcmt.lib;libcmt.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <ProgramDatabaseFile />
+      <SubSystem>Windows</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention />
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <WarningLevel>0</WarningLevel>
+      <DefaultCharType>Unsigned</DefaultCharType>
+      <EnableErrorChecks>None</EnableErrorChecks>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>-Zm200 -EHsc -EHsc %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MaxSpeed</Optimization>
+      <AdditionalIncludeDirectories>..\libs\qwt;..\src\GUI-QT;..\libs;$(QTDIR)\include;moc\;..\src\GUI-QT\qt2;$(QTDIR)\mkspecs\win32-msvc2005;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>QT_NO_DEBUG;_WINDOWS;WIN32;HAVE_SETUPAPI;USE_QT_GUI;HAVE_LIBZ;HAVE_LIBFAAD;USE_FAAD2_LIBRARY;HAVE_LIBHAMLIB;HAVE_RIG_PARSE_MODE;QT_DLL;QT_THREAD_SUPPORT;QT_ACCESSIBILITY_SUPPORT;QT_TABLET_SUPPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <PreprocessSuppressLineNumbers>false</PreprocessSuppressLineNumbers>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <AssemblerListingLocation>windows\</AssemblerListingLocation>
+      <ObjectFileName>windows\</ObjectFileName>
+      <ProgramDataBaseFileName>.\</ProgramDataBaseFileName>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat />
+      <DisableSpecificWarnings>4996;4996;4521;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>qt-mt3.lib;qtmain.lib;opengl32.lib;glu32.lib;qwt.lib;zdll.lib;fftw.lib;setupapi.lib;winmm.lib;wsock32.lib;faad_drm.lib;libhamlib-2.lib;kernel32.lib;user32.lib;gdi32.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;imm32.lib;winspool.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>Debug\Dream.exe</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>$(QTDIR)\lib;..\libs\qwt;..\libs;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreSpecificDefaultLibraries>libcmt.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile />
+      <SubSystem>Windows</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention />
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\AMDemodulation.cpp" />
+    <ClCompile Include="..\src\AMSSDemodulation.cpp" />
+    <ClCompile Include="..\src\chanest\ChanEstTime.cpp" />
+    <ClCompile Include="..\src\chanest\ChannelEstimation.cpp" />
+    <ClCompile Include="..\src\chanest\IdealChannelEstimation.cpp" />
+    <ClCompile Include="..\src\chanest\TimeLinear.cpp" />
+    <ClCompile Include="..\src\chanest\TimeWiener.cpp" />
+    <ClCompile Include="..\src\datadecoding\DABMOT.cpp" />
+    <ClCompile Include="..\src\datadecoding\DataDecoder.cpp" />
+    <ClCompile Include="..\src\datadecoding\DataEncoder.cpp" />
+    <ClCompile Include="..\src\datadecoding\epg\EPG.cpp" />
+    <ClCompile Include="..\src\datadecoding\epg\epgdec.cpp" />
+    <ClCompile Include="..\src\datadecoding\epg\epgutil.cpp" />
+    <ClCompile Include="..\src\datadecoding\Experiment.cpp" />
+    <ClCompile Include="..\src\datadecoding\Journaline.cpp" />
+    <ClCompile Include="..\src\datadecoding\journaline\crc_8_16.c" />
+    <ClCompile Include="..\src\datadecoding\journaline\dabdgdec_impl.c" />
+    <ClCompile Include="..\src\datadecoding\journaline\log.c" />
+    <ClCompile Include="..\src\datadecoding\journaline\newsobject.cpp" />
+    <ClCompile Include="..\src\datadecoding\journaline\newssvcdec_impl.cpp" />
+    <ClCompile Include="..\src\datadecoding\journaline\NML.cpp" />
+    <ClCompile Include="..\src\datadecoding\journaline\Splitter.cpp" />
+    <ClCompile Include="..\src\datadecoding\MOTSlideShow.cpp" />
+    <ClCompile Include="..\src\DataIO.cpp" />
+    <ClCompile Include="..\src\drmchannel\ChannelSimulation.cpp" />
+    <ClCompile Include="..\src\DrmReceiver.cpp" />
+    <ClCompile Include="..\src\DRMSignalIO.cpp" />
+    <ClCompile Include="..\src\DrmSimulation.cpp" />
+    <ClCompile Include="..\src\DrmTransmitter.cpp" />
+    <ClCompile Include="..\src\FAC\FAC.cpp" />
+    <ClCompile Include="..\src\GUI-QT\AnalogDemDlg.cpp" />
+    <ClCompile Include="..\src\GUI-QT\DialogUtil.cpp" />
+    <ClCompile Include="..\src\GUI-QT\EPGDlg.cpp" />
+    <ClCompile Include="..\src\GUI-QT\fdrmdialog.cpp" />
+    <ClCompile Include="..\src\GUI-QT\fmdialog.cpp" />
+    <ClCompile Include="..\src\GUI-QT\GeneralSettingsDlg.cpp" />
+    <ClCompile Include="..\src\GUI-QT\LiveScheduleDlg.cpp" />
+    <ClCompile Include="..\src\GUI-QT\Logging.cpp" />
+    <ClCompile Include="..\src\GUI-QT\main.cpp" />
+    <ClCompile Include="..\src\GUI-QT\MultColorLED.cpp" />
+    <ClCompile Include="..\src\GUI-QT\MultimediaDlg.cpp" />
+    <ClCompile Include="..\src\GUI-QT\MultSettingsDlg.cpp" />
+    <ClCompile Include="..\src\GUI-QT\qt2\DRMPlot.cpp" />
+    <ClCompile Include="..\src\GUI-QT\Rig.cpp" />
+    <ClCompile Include="..\src\GUI-QT\StationsDlg.cpp" />
+    <ClCompile Include="..\src\GUI-QT\systemevalDlg.cpp" />
+    <ClCompile Include="..\src\GUI-QT\TransmDlg.cpp" />
+    <ClCompile Include="..\src\InputResample.cpp" />
+    <ClCompile Include="..\src\interleaver\BlockInterleaver.cpp" />
+    <ClCompile Include="..\src\interleaver\SymbolInterleaver.cpp" />
+    <ClCompile Include="..\src\IQInputFilter.cpp" />
+    <ClCompile Include="..\src\matlib\MatlibSigProToolbox.cpp" />
+    <ClCompile Include="..\src\matlib\MatlibStdToolbox.cpp" />
+    <ClCompile Include="..\src\MDI\AFPacketGenerator.cpp" />
+    <ClCompile Include="..\src\MDI\MDIDecode.cpp" />
+    <ClCompile Include="..\src\MDI\MDIInBuffer.cpp" />
+    <ClCompile Include="..\src\MDI\MDIRSCI.cpp" />
+    <ClCompile Include="..\src\MDI\MDITagItemDecoders.cpp" />
+    <ClCompile Include="..\src\MDI\MDITagItems.cpp" />
+    <ClCompile Include="..\src\MDI\PacketSinkFile.cpp" />
+    <ClCompile Include="..\src\MDI\PacketSocketNull.cpp" />
+    <ClCompile Include="..\src\MDI\PacketSocketQT.cpp" />
+    <ClCompile Include="..\src\MDI\PacketSourceFile.cpp" />
+    <ClCompile Include="..\src\MDI\Pft.cpp" />
+    <ClCompile Include="..\src\MDI\RCITagItems.cpp" />
+    <ClCompile Include="..\src\MDI\RSCITagItemDecoders.cpp" />
+    <ClCompile Include="..\src\MDI\RSISubscriber.cpp" />
+    <ClCompile Include="..\src\MDI\TagPacketDecoder.cpp" />
+    <ClCompile Include="..\src\MDI\TagPacketDecoderMDI.cpp" />
+    <ClCompile Include="..\src\MDI\TagPacketDecoderRSCIControl.cpp" />
+    <ClCompile Include="..\src\MDI\TagPacketGenerator.cpp" />
+    <ClCompile Include="..\src\mlc\BitInterleaver.cpp" />
+    <ClCompile Include="..\src\mlc\ChannelCode.cpp" />
+    <ClCompile Include="..\src\mlc\ConvEncoder.cpp" />
+    <ClCompile Include="..\src\mlc\EnergyDispersal.cpp" />
+    <ClCompile Include="..\src\mlc\Metric.cpp" />
+    <ClCompile Include="..\src\mlc\MLC.cpp" />
+    <ClCompile Include="..\src\mlc\QAMMapping.cpp" />
+    <ClCompile Include="..\src\mlc\TrellisUpdateMMX.cpp" />
+    <ClCompile Include="..\src\mlc\TrellisUpdateSSE2.cpp" />
+    <ClCompile Include="..\src\mlc\ViterbiDecoder.cpp" />
+    <ClCompile Include="..\src\MSCMultiplexer.cpp" />
+    <ClCompile Include="..\src\OFDM.cpp" />
+    <ClCompile Include="..\src\ofdmcellmapping\CellMappingTable.cpp" />
+    <ClCompile Include="..\src\ofdmcellmapping\OFDMCellMapping.cpp" />
+    <ClCompile Include="..\src\Parameter.cpp" />
+    <ClCompile Include="..\src\PlotManager.cpp" />
+    <ClCompile Include="..\src\ReceptLog.cpp" />
+    <ClCompile Include="..\src\resample\Resample.cpp" />
+    <ClCompile Include="..\src\resample\ResampleFilter.cpp" />
+    <ClCompile Include="..\src\Scheduler.cpp" />
+    <ClCompile Include="..\src\SDC\SDCReceive.cpp" />
+    <ClCompile Include="..\src\SDC\SDCTransmit.cpp" />
+    <ClCompile Include="..\src\ServiceInformation.cpp" />
+    <ClCompile Include="..\src\SimulationParameters.cpp" />
+    <ClCompile Include="..\src\sound\audiofilein.cpp" />
+    <ClCompile Include="..\src\sourcedecoders\AudioSourceDecoder.cpp" />
+    <ClCompile Include="..\src\sourcedecoders\AudioSourceEncoder.cpp" />
+    <ClCompile Include="..\src\sync\FreqSyncAcq.cpp" />
+    <ClCompile Include="..\src\sync\SyncUsingPil.cpp" />
+    <ClCompile Include="..\src\sync\TimeSync.cpp" />
+    <ClCompile Include="..\src\sync\TimeSyncFilter.cpp" />
+    <ClCompile Include="..\src\sync\TimeSyncTrack.cpp" />
+    <ClCompile Include="..\src\tables\TableCarMap.cpp" />
+    <ClCompile Include="..\src\tables\TableFAC.cpp" />
+    <ClCompile Include="..\src\tables\TableStations.cpp" />
+    <ClCompile Include="..\src\TextMessage.cpp" />
+    <ClCompile Include="..\src\util\CRC.cpp" />
+    <ClCompile Include="..\src\util\LogPrint.cpp" />
+    <ClCompile Include="..\src\util\Reassemble.cpp" />
+    <ClCompile Include="..\src\util\Settings.cpp" />
+    <ClCompile Include="..\src\util\Utilities.cpp" />
+    <ClCompile Include="..\src\Version.cpp" />
+    <ClCompile Include="..\src\windows\Pacer.cpp" />
+    <ClCompile Include="..\src\windows\Sound.cpp" />
+    <ClCompile Include="moc\AboutDlgbase.cpp" />
+    <ClCompile Include="moc\AMSSDlgbase.cpp" />
+    <ClCompile Include="moc\AnalogDemDlgbase.cpp" />
+    <ClCompile Include="moc\EPGDlgbase.cpp" />
+    <ClCompile Include="moc\fdrmdialogbase.cpp" />
+    <ClCompile Include="moc\fmdialogbase.cpp" />
+    <ClCompile Include="moc\GeneralSettingsDlgbase.cpp" />
+    <ClCompile Include="moc\LiveScheduleDlgbase.cpp" />
+    <ClCompile Include="moc\moc_AboutDlgbase.cpp" />
+    <ClCompile Include="moc\moc_AMSSDlgbase.cpp" />
+    <ClCompile Include="moc\moc_AnalogDemDlg.cpp" />
+    <ClCompile Include="moc\moc_AnalogDemDlgbase.cpp" />
+    <ClCompile Include="moc\moc_DialogUtil.cpp" />
+    <ClCompile Include="moc\moc_DRMPlot.cpp" />
+    <ClCompile Include="moc\moc_EPGDlg.cpp" />
+    <ClCompile Include="moc\moc_EPGDlgbase.cpp" />
+    <ClCompile Include="moc\moc_fdrmdialog.cpp" />
+    <ClCompile Include="moc\moc_fdrmdialogbase.cpp" />
+    <ClCompile Include="moc\moc_fmdialog.cpp" />
+    <ClCompile Include="moc\moc_fmdialogbase.cpp" />
+    <ClCompile Include="moc\moc_GeneralSettingsDlg.cpp" />
+    <ClCompile Include="moc\moc_GeneralSettingsDlgbase.cpp" />
+    <ClCompile Include="moc\moc_LiveScheduleDlg.cpp" />
+    <ClCompile Include="moc\moc_LiveScheduleDlgbase.cpp" />
+    <ClCompile Include="moc\moc_Logging.cpp" />
+    <ClCompile Include="moc\moc_MultColorLED.cpp" />
+    <ClCompile Include="moc\moc_MultimediaDlg.cpp" />
+    <ClCompile Include="moc\moc_MultimediaDlgbase.cpp" />
+    <ClCompile Include="moc\moc_MultSettingsDlg.cpp" />
+    <ClCompile Include="moc\moc_MultSettingsDlgbase.cpp" />
+    <ClCompile Include="moc\moc_PacketSocketQT.cpp" />
+    <ClCompile Include="moc\moc_Rig.cpp" />
+    <ClCompile Include="moc\moc_StationsDlg.cpp" />
+    <ClCompile Include="moc\moc_StationsDlgbase.cpp" />
+    <ClCompile Include="moc\moc_systemevalDlg.cpp" />
+    <ClCompile Include="moc\moc_systemevalDlgbase.cpp" />
+    <ClCompile Include="moc\moc_TransmDlg.cpp" />
+    <ClCompile Include="moc\moc_TransmDlgbase.cpp" />
+    <ClCompile Include="moc\MultimediaDlgbase.cpp" />
+    <ClCompile Include="moc\MultSettingsDlgbase.cpp" />
+    <ClCompile Include="moc\StationsDlgbase.cpp" />
+    <ClCompile Include="moc\systemevalDlgbase.cpp" />
+    <ClCompile Include="moc\TransmDlgbase.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\AMDemodulation.h" />
+    <ClInclude Include="..\src\AMSSDemodulation.h" />
+    <ClInclude Include="..\src\chanest\ChanEstTime.h" />
+    <ClInclude Include="..\src\chanest\ChannelEstimation.h" />
+    <ClInclude Include="..\src\chanest\IdealChannelEstimation.h" />
+    <ClInclude Include="..\src\chanest\TimeLinear.h" />
+    <ClInclude Include="..\src\chanest\TimeWiener.h" />
+    <ClInclude Include="..\src\datadecoding\DABMOT.h" />
+    <ClInclude Include="..\src\datadecoding\DataDecoder.h" />
+    <ClInclude Include="..\src\datadecoding\DataEncoder.h" />
+    <ClInclude Include="..\src\datadecoding\epg\EPG.h" />
+    <ClInclude Include="..\src\datadecoding\epg\epgdec.h" />
+    <ClInclude Include="..\src\datadecoding\epg\epgutil.h" />
+    <ClInclude Include="..\src\datadecoding\Experiment.h" />
+    <ClInclude Include="..\src\datadecoding\Journaline.h" />
+    <ClInclude Include="..\src\datadecoding\journaline\cpplog.h" />
+    <ClInclude Include="..\src\datadecoding\journaline\crc_8_16.h" />
+    <ClInclude Include="..\src\datadecoding\journaline\dabdatagroupdecoder.h" />
+    <ClInclude Include="..\src\datadecoding\journaline\dabdgdec_impl.h" />
+    <ClInclude Include="..\src\datadecoding\journaline\log.h" />
+    <ClInclude Include="..\src\datadecoding\journaline\newsobject.h" />
+    <ClInclude Include="..\src\datadecoding\journaline\newssvcdec.h" />
+    <ClInclude Include="..\src\datadecoding\journaline\newssvcdec_impl.h" />
+    <ClInclude Include="..\src\datadecoding\journaline\NML.h" />
+    <ClInclude Include="..\src\datadecoding\journaline\Splitter.h" />
+    <ClInclude Include="..\src\datadecoding\MOTSlideShow.h" />
+    <ClInclude Include="..\src\DataIO.h" />
+    <ClInclude Include="..\src\drmchannel\ChannelSimulation.h" />
+    <ClInclude Include="..\src\DrmReceiver.h" />
+    <ClInclude Include="..\src\DRMSignalIO.h" />
+    <ClInclude Include="..\src\DrmSimulation.h" />
+    <ClInclude Include="..\src\DrmTransmitter.h" />
+    <ClInclude Include="..\src\FAC\FAC.h" />
+    <ClInclude Include="..\src\GlobalDefinitions.h" />
+    <CustomBuild Include="..\src\GUI-QT\AnalogDemDlg.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing ..\src\GUI-QT\AnalogDemDlg.h...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe ..\src\GUI-QT\AnalogDemDlg.h -o moc\moc_AnalogDemDlg.cpp
+</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">moc\moc_AnalogDemDlg.cpp;%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing ..\src\GUI-QT\AnalogDemDlg.h...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe ..\src\GUI-QT\AnalogDemDlg.h -o moc\moc_AnalogDemDlg.cpp
+</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">moc\moc_AnalogDemDlg.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\src\GUI-QT\DialogUtil.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing ..\src\GUI-QT\DialogUtil.h...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe ..\src\GUI-QT\DialogUtil.h -o moc\moc_DialogUtil.cpp
+</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">moc\moc_DialogUtil.cpp;%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing ..\src\GUI-QT\DialogUtil.h...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe ..\src\GUI-QT\DialogUtil.h -o moc\moc_DialogUtil.cpp
+</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">moc\moc_DialogUtil.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\src\GUI-QT\EPGDlg.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing ..\src\GUI-QT\EPGDlg.h...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe ..\src\GUI-QT\EPGDlg.h -o moc\moc_EPGDlg.cpp
+</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">moc\moc_EPGDlg.cpp;%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing ..\src\GUI-QT\EPGDlg.h...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe ..\src\GUI-QT\EPGDlg.h -o moc\moc_EPGDlg.cpp
+</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">moc\moc_EPGDlg.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\src\GUI-QT\fdrmdialog.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing ..\src\GUI-QT\fdrmdialog.h...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe ..\src\GUI-QT\fdrmdialog.h -o moc\moc_fdrmdialog.cpp
+</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">moc\moc_fdrmdialog.cpp;%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing ..\src\GUI-QT\fdrmdialog.h...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe ..\src\GUI-QT\fdrmdialog.h -o moc\moc_fdrmdialog.cpp
+</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">moc\moc_fdrmdialog.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\src\GUI-QT\fmdialog.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing ..\src\GUI-QT\fmdialog.h...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe ..\src\GUI-QT\fmdialog.h -o moc\moc_fmdialog.cpp
+</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">moc\moc_fmdialog.cpp;%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing ..\src\GUI-QT\fmdialog.h...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe ..\src\GUI-QT\fmdialog.h -o moc\moc_fmdialog.cpp
+</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">moc\moc_fmdialog.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\src\GUI-QT\GeneralSettingsDlg.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing ..\src\GUI-QT\GeneralSettingsDlg.h...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe ..\src\GUI-QT\GeneralSettingsDlg.h -o moc\moc_GeneralSettingsDlg.cpp
+</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">moc\moc_GeneralSettingsDlg.cpp;%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing ..\src\GUI-QT\GeneralSettingsDlg.h...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe ..\src\GUI-QT\GeneralSettingsDlg.h -o moc\moc_GeneralSettingsDlg.cpp
+</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">moc\moc_GeneralSettingsDlg.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\src\GUI-QT\LiveScheduleDlg.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing ..\src\GUI-QT\LiveScheduleDlg.h...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe ..\src\GUI-QT\LiveScheduleDlg.h -o moc\moc_LiveScheduleDlg.cpp
+</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">moc\moc_LiveScheduleDlg.cpp;%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing ..\src\GUI-QT\LiveScheduleDlg.h...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe ..\src\GUI-QT\LiveScheduleDlg.h -o moc\moc_LiveScheduleDlg.cpp
+</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">moc\moc_LiveScheduleDlg.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\src\GUI-QT\Logging.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing ..\src\GUI-QT\Logging.h...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe ..\src\GUI-QT\Logging.h -o moc\moc_Logging.cpp
+</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">moc\moc_Logging.cpp;%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing ..\src\GUI-QT\Logging.h...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe ..\src\GUI-QT\Logging.h -o moc\moc_Logging.cpp
+</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">moc\moc_Logging.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\src\GUI-QT\MultColorLED.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing ..\src\GUI-QT\MultColorLED.h...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe ..\src\GUI-QT\MultColorLED.h -o moc\moc_MultColorLED.cpp
+</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">moc\moc_MultColorLED.cpp;%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing ..\src\GUI-QT\MultColorLED.h...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe ..\src\GUI-QT\MultColorLED.h -o moc\moc_MultColorLED.cpp
+</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">moc\moc_MultColorLED.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\src\GUI-QT\MultimediaDlg.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing ..\src\GUI-QT\MultimediaDlg.h...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe ..\src\GUI-QT\MultimediaDlg.h -o moc\moc_MultimediaDlg.cpp
+</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">moc\moc_MultimediaDlg.cpp;%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing ..\src\GUI-QT\MultimediaDlg.h...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe ..\src\GUI-QT\MultimediaDlg.h -o moc\moc_MultimediaDlg.cpp
+</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">moc\moc_MultimediaDlg.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\src\GUI-QT\MultSettingsDlg.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing ..\src\GUI-QT\MultSettingsDlg.h...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe ..\src\GUI-QT\MultSettingsDlg.h -o moc\moc_MultSettingsDlg.cpp
+</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">moc\moc_MultSettingsDlg.cpp;%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing ..\src\GUI-QT\MultSettingsDlg.h...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe ..\src\GUI-QT\MultSettingsDlg.h -o moc\moc_MultSettingsDlg.cpp
+</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">moc\moc_MultSettingsDlg.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\src\GUI-QT\qt2\DRMPlot.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing ..\src\GUI-QT\qt2\DRMPlot.h...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe ..\src\GUI-QT\qt2\DRMPlot.h -o moc\moc_DRMPlot.cpp
+</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">moc\moc_DRMPlot.cpp;%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing ..\src\GUI-QT\qt2\DRMPlot.h...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe ..\src\GUI-QT\qt2\DRMPlot.h -o moc\moc_DRMPlot.cpp
+</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">moc\moc_DRMPlot.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\src\GUI-QT\Rig.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing ..\src\GUI-QT\Rig.h...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe ..\src\GUI-QT\Rig.h -o moc\moc_Rig.cpp
+</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">moc\moc_Rig.cpp;%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing ..\src\GUI-QT\Rig.h...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe ..\src\GUI-QT\Rig.h -o moc\moc_Rig.cpp
+</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">moc\moc_Rig.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\src\GUI-QT\StationsDlg.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing ..\src\GUI-QT\StationsDlg.h...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe ..\src\GUI-QT\StationsDlg.h -o moc\moc_StationsDlg.cpp
+</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">moc\moc_StationsDlg.cpp;%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing ..\src\GUI-QT\StationsDlg.h...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe ..\src\GUI-QT\StationsDlg.h -o moc\moc_StationsDlg.cpp
+</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">moc\moc_StationsDlg.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\src\GUI-QT\systemevalDlg.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing ..\src\GUI-QT\systemevalDlg.h...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe ..\src\GUI-QT\systemevalDlg.h -o moc\moc_systemevalDlg.cpp
+</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">moc\moc_systemevalDlg.cpp;%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing ..\src\GUI-QT\systemevalDlg.h...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe ..\src\GUI-QT\systemevalDlg.h -o moc\moc_systemevalDlg.cpp
+</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">moc\moc_systemevalDlg.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\src\GUI-QT\TransmDlg.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing ..\src\GUI-QT\TransmDlg.h...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe ..\src\GUI-QT\TransmDlg.h -o moc\moc_TransmDlg.cpp
+</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">moc\moc_TransmDlg.cpp;%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing ..\src\GUI-QT\TransmDlg.h...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe ..\src\GUI-QT\TransmDlg.h -o moc\moc_TransmDlg.cpp
+</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">moc\moc_TransmDlg.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <ClInclude Include="..\src\InputResample.h" />
+    <ClInclude Include="..\src\interleaver\BlockInterleaver.h" />
+    <ClInclude Include="..\src\interleaver\SymbolInterleaver.h" />
+    <ClInclude Include="..\src\IQInputFilter.h" />
+    <ClInclude Include="..\src\matlib\Matlib.h" />
+    <ClInclude Include="..\src\matlib\MatlibSigProToolbox.h" />
+    <ClInclude Include="..\src\matlib\MatlibStdToolbox.h" />
+    <ClInclude Include="..\src\MDI\AFPacketGenerator.h" />
+    <ClInclude Include="..\src\MDI\MDIDecode.h" />
+    <ClInclude Include="..\src\MDI\MDIDefinitions.h" />
+    <ClInclude Include="..\src\MDI\MDIInBuffer.h" />
+    <ClInclude Include="..\src\MDI\MDIRSCI.h" />
+    <ClInclude Include="..\src\MDI\MDITagItemDecoders.h" />
+    <ClInclude Include="..\src\MDI\MDITagItems.h" />
+    <ClInclude Include="..\src\MDI\PacketInOut.h" />
+    <ClInclude Include="..\src\MDI\PacketSinkFile.h" />
+    <ClInclude Include="..\src\MDI\PacketSocketNull.h" />
+    <CustomBuild Include="..\src\MDI\PacketSocketQT.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing ..\src\MDI\PacketSocketQT.h...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe ..\src\MDI\PacketSocketQT.h -o moc\moc_PacketSocketQT.cpp
+</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">moc\moc_PacketSocketQT.cpp;%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing ..\src\MDI\PacketSocketQT.h...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe ..\src\MDI\PacketSocketQT.h -o moc\moc_PacketSocketQT.cpp
+</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">moc\moc_PacketSocketQT.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <ClInclude Include="..\src\MDI\Pft.h" />
+    <ClInclude Include="..\src\MDI\RCITagItems.h" />
+    <ClInclude Include="..\src\MDI\RSCITagItemDecoders.h" />
+    <ClInclude Include="..\src\MDI\RSISubscriber.h" />
+    <ClInclude Include="..\src\MDI\TagItemDecoder.h" />
+    <ClInclude Include="..\src\MDI\TagPacketDecoder.h" />
+    <ClInclude Include="..\src\MDI\TagPacketDecoderMDI.h" />
+    <ClInclude Include="..\src\MDI\TagPacketDecoderRSCIControl.h" />
+    <ClInclude Include="..\src\MDI\TagPacketGenerator.h" />
+    <ClInclude Include="..\src\mlc\BitInterleaver.h" />
+    <ClInclude Include="..\src\mlc\ChannelCode.h" />
+    <ClInclude Include="..\src\mlc\ConvEncoder.h" />
+    <ClInclude Include="..\src\mlc\EnergyDispersal.h" />
+    <ClInclude Include="..\src\mlc\Metric.h" />
+    <ClInclude Include="..\src\mlc\MLC.h" />
+    <ClInclude Include="..\src\mlc\QAMMapping.h" />
+    <ClInclude Include="..\src\mlc\ViterbiDecoder.h" />
+    <ClInclude Include="..\src\MSCMultiplexer.h" />
+    <ClInclude Include="..\src\OFDM.h" />
+    <ClInclude Include="..\src\ofdmcellmapping\CellMappingTable.h" />
+    <ClInclude Include="..\src\ofdmcellmapping\OFDMCellMapping.h" />
+    <ClInclude Include="..\src\Parameter.h" />
+    <ClInclude Include="..\src\PlotManager.h" />
+    <ClInclude Include="..\src\ReceptLog.h" />
+    <ClInclude Include="..\src\resample\Resample.h" />
+    <ClInclude Include="..\src\resample\ResampleFilter.h" />
+    <ClInclude Include="..\src\Scheduler.h" />
+    <ClInclude Include="..\src\SDC\SDC.h" />
+    <ClInclude Include="..\src\selectioninterface.h" />
+    <ClInclude Include="..\src\ServiceInformation.h" />
+    <ClInclude Include="..\src\sound.h" />
+    <ClInclude Include="..\src\soundinterface.h" />
+    <ClInclude Include="..\src\sound\audiofilein.h" />
+    <ClInclude Include="..\src\sound\soundnull.h" />
+    <ClInclude Include="..\src\sourcedecoders\AudioSourceDecoder.h" />
+    <ClInclude Include="..\src\sourcedecoders\AudioSourceEncoder.h" />
+    <ClInclude Include="..\src\sync\FreqSyncAcq.h" />
+    <ClInclude Include="..\src\sync\SyncUsingPil.h" />
+    <ClInclude Include="..\src\sync\TimeSync.h" />
+    <ClInclude Include="..\src\sync\TimeSyncFilter.h" />
+    <ClInclude Include="..\src\sync\TimeSyncTrack.h" />
+    <ClInclude Include="..\src\tables\TableAMSS.h" />
+    <ClInclude Include="..\src\tables\TableCarMap.h" />
+    <ClInclude Include="..\src\tables\TableDRMGlobal.h" />
+    <ClInclude Include="..\src\tables\TableFAC.h" />
+    <ClInclude Include="..\src\tables\TableMLC.h" />
+    <ClInclude Include="..\src\tables\TableQAMMapping.h" />
+    <ClInclude Include="..\src\tables\TableStations.h" />
+    <ClInclude Include="..\src\TextMessage.h" />
+    <ClInclude Include="..\src\util\AudioFile.h" />
+    <ClInclude Include="..\src\util\Buffer.h" />
+    <ClInclude Include="..\src\util\CRC.h" />
+    <ClInclude Include="..\src\util\LogPrint.h" />
+    <ClInclude Include="..\src\util\Modul.h" />
+    <ClInclude Include="..\src\util\Pacer.h" />
+    <ClInclude Include="..\src\util\Reassemble.h" />
+    <ClInclude Include="..\src\util\Settings.h" />
+    <ClInclude Include="..\src\util\Utilities.h" />
+    <ClInclude Include="..\src\util\Vector.h" />
+    <ClInclude Include="..\src\Version.h" />
+    <ClInclude Include="..\src\windows\Sound.h" />
+    <ClInclude Include="..\src\windows\SoundWin.h" />
+    <ClInclude Include="moc\AboutDlgbase.h" />
+    <ClInclude Include="moc\AMSSDlgbase.h" />
+    <ClInclude Include="moc\AnalogDemDlgbase.h" />
+    <ClInclude Include="moc\EPGDlgbase.h" />
+    <ClInclude Include="moc\fdrmdialogbase.h" />
+    <ClInclude Include="moc\fmdialogbase.h" />
+    <ClInclude Include="moc\GeneralSettingsDlgbase.h" />
+    <ClInclude Include="moc\LiveScheduleDlgbase.h" />
+    <ClInclude Include="moc\MultimediaDlgbase.h" />
+    <ClInclude Include="moc\MultSettingsDlgbase.h" />
+    <ClInclude Include="moc\StationsDlgbase.h" />
+    <ClInclude Include="moc\systemevalDlgbase.h" />
+    <ClInclude Include="moc\TransmDlgbase.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\src\GUI-QT\qt2\AboutDlgbase.ui">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Uic%27ing ..\src\GUI-QT\qt2\AboutDlgbase.ui...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\uic.exe ..\src\GUI-QT\qt2\AboutDlgbase.ui -o moc\AboutDlgbase.h
+$(QTDIR)\bin\uic.exe ..\src\GUI-QT\qt2\AboutDlgbase.ui -i AboutDlgbase.h -o moc\AboutDlgbase.cpp
+$(QTDIR)\bin\moc.exe moc\AboutDlgbase.h -o moc\moc_AboutDlgbase.cpp
+</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">moc\AboutDlgbase.h;moc\AboutDlgbase.cpp;moc\moc_AboutDlgbase.cpp;%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Uic%27ing ..\src\GUI-QT\qt2\AboutDlgbase.ui...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\uic.exe ..\src\GUI-QT\qt2\AboutDlgbase.ui -o moc\AboutDlgbase.h
+$(QTDIR)\bin\uic.exe ..\src\GUI-QT\qt2\AboutDlgbase.ui -i AboutDlgbase.h -o moc\AboutDlgbase.cpp
+$(QTDIR)\bin\moc.exe moc\AboutDlgbase.h -o moc\moc_AboutDlgbase.cpp
+</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">moc\AboutDlgbase.h;moc\AboutDlgbase.cpp;moc\moc_AboutDlgbase.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\src\GUI-QT\qt2\AMSSDlgbase.ui">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Uic%27ing ..\src\GUI-QT\qt2\AMSSDlgbase.ui...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\uic.exe ..\src\GUI-QT\qt2\AMSSDlgbase.ui -o moc\AMSSDlgbase.h
+$(QTDIR)\bin\uic.exe ..\src\GUI-QT\qt2\AMSSDlgbase.ui -i AMSSDlgbase.h -o moc\AMSSDlgbase.cpp
+$(QTDIR)\bin\moc.exe moc\AMSSDlgbase.h -o moc\moc_AMSSDlgbase.cpp
+</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">moc\AMSSDlgbase.h;moc\AMSSDlgbase.cpp;moc\moc_AMSSDlgbase.cpp;%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Uic%27ing ..\src\GUI-QT\qt2\AMSSDlgbase.ui...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\uic.exe ..\src\GUI-QT\qt2\AMSSDlgbase.ui -o moc\AMSSDlgbase.h
+$(QTDIR)\bin\uic.exe ..\src\GUI-QT\qt2\AMSSDlgbase.ui -i AMSSDlgbase.h -o moc\AMSSDlgbase.cpp
+$(QTDIR)\bin\moc.exe moc\AMSSDlgbase.h -o moc\moc_AMSSDlgbase.cpp
+</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">moc\AMSSDlgbase.h;moc\AMSSDlgbase.cpp;moc\moc_AMSSDlgbase.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\src\GUI-QT\qt2\AnalogDemDlgbase.ui">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Uic%27ing ..\src\GUI-QT\qt2\AnalogDemDlgbase.ui...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\uic.exe ..\src\GUI-QT\qt2\AnalogDemDlgbase.ui -o moc\AnalogDemDlgbase.h
+$(QTDIR)\bin\uic.exe ..\src\GUI-QT\qt2\AnalogDemDlgbase.ui -i AnalogDemDlgbase.h -o moc\AnalogDemDlgbase.cpp
+$(QTDIR)\bin\moc.exe moc\AnalogDemDlgbase.h -o moc\moc_AnalogDemDlgbase.cpp
+</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">moc\AnalogDemDlgbase.h;moc\AnalogDemDlgbase.cpp;moc\moc_AnalogDemDlgbase.cpp;%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Uic%27ing ..\src\GUI-QT\qt2\AnalogDemDlgbase.ui...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\uic.exe ..\src\GUI-QT\qt2\AnalogDemDlgbase.ui -o moc\AnalogDemDlgbase.h
+$(QTDIR)\bin\uic.exe ..\src\GUI-QT\qt2\AnalogDemDlgbase.ui -i AnalogDemDlgbase.h -o moc\AnalogDemDlgbase.cpp
+$(QTDIR)\bin\moc.exe moc\AnalogDemDlgbase.h -o moc\moc_AnalogDemDlgbase.cpp
+</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">moc\AnalogDemDlgbase.h;moc\AnalogDemDlgbase.cpp;moc\moc_AnalogDemDlgbase.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\src\GUI-QT\qt2\EPGDlgbase.ui">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Uic%27ing ..\src\GUI-QT\qt2\EPGDlgbase.ui...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\uic.exe ..\src\GUI-QT\qt2\EPGDlgbase.ui -o moc\EPGDlgbase.h
+$(QTDIR)\bin\uic.exe ..\src\GUI-QT\qt2\EPGDlgbase.ui -i EPGDlgbase.h -o moc\EPGDlgbase.cpp
+$(QTDIR)\bin\moc.exe moc\EPGDlgbase.h -o moc\moc_EPGDlgbase.cpp
+</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">moc\EPGDlgbase.h;moc\EPGDlgbase.cpp;moc\moc_EPGDlgbase.cpp;%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Uic%27ing ..\src\GUI-QT\qt2\EPGDlgbase.ui...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\uic.exe ..\src\GUI-QT\qt2\EPGDlgbase.ui -o moc\EPGDlgbase.h
+$(QTDIR)\bin\uic.exe ..\src\GUI-QT\qt2\EPGDlgbase.ui -i EPGDlgbase.h -o moc\EPGDlgbase.cpp
+$(QTDIR)\bin\moc.exe moc\EPGDlgbase.h -o moc\moc_EPGDlgbase.cpp
+</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">moc\EPGDlgbase.h;moc\EPGDlgbase.cpp;moc\moc_EPGDlgbase.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\src\GUI-QT\qt2\fdrmdialogbase.ui">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Uic%27ing ..\src\GUI-QT\qt2\fdrmdialogbase.ui...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\uic.exe ..\src\GUI-QT\qt2\fdrmdialogbase.ui -o moc\fdrmdialogbase.h
+$(QTDIR)\bin\uic.exe ..\src\GUI-QT\qt2\fdrmdialogbase.ui -i fdrmdialogbase.h -o moc\fdrmdialogbase.cpp
+$(QTDIR)\bin\moc.exe moc\fdrmdialogbase.h -o moc\moc_fdrmdialogbase.cpp
+</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">moc\fdrmdialogbase.h;moc\fdrmdialogbase.cpp;moc\moc_fdrmdialogbase.cpp;%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Uic%27ing ..\src\GUI-QT\qt2\fdrmdialogbase.ui...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\uic.exe ..\src\GUI-QT\qt2\fdrmdialogbase.ui -o moc\fdrmdialogbase.h
+$(QTDIR)\bin\uic.exe ..\src\GUI-QT\qt2\fdrmdialogbase.ui -i fdrmdialogbase.h -o moc\fdrmdialogbase.cpp
+$(QTDIR)\bin\moc.exe moc\fdrmdialogbase.h -o moc\moc_fdrmdialogbase.cpp
+</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">moc\fdrmdialogbase.h;moc\fdrmdialogbase.cpp;moc\moc_fdrmdialogbase.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\src\GUI-QT\qt2\fmdialogbase.ui">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Uic%27ing ..\src\GUI-QT\qt2\fmdialogbase.ui...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\uic.exe ..\src\GUI-QT\qt2\fmdialogbase.ui -o moc\fmdialogbase.h
+$(QTDIR)\bin\uic.exe ..\src\GUI-QT\qt2\fmdialogbase.ui -i fmdialogbase.h -o moc\fmdialogbase.cpp
+$(QTDIR)\bin\moc.exe moc\fmdialogbase.h -o moc\moc_fmdialogbase.cpp
+</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">moc\fmdialogbase.h;moc\fmdialogbase.cpp;moc\moc_fmdialogbase.cpp;%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Uic%27ing ..\src\GUI-QT\qt2\fmdialogbase.ui...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\uic.exe ..\src\GUI-QT\qt2\fmdialogbase.ui -o moc\fmdialogbase.h
+$(QTDIR)\bin\uic.exe ..\src\GUI-QT\qt2\fmdialogbase.ui -i fmdialogbase.h -o moc\fmdialogbase.cpp
+$(QTDIR)\bin\moc.exe moc\fmdialogbase.h -o moc\moc_fmdialogbase.cpp
+</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">moc\fmdialogbase.h;moc\fmdialogbase.cpp;moc\moc_fmdialogbase.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\src\GUI-QT\qt2\GeneralSettingsDlgbase.ui">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Uic%27ing ..\src\GUI-QT\qt2\GeneralSettingsDlgbase.ui...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\uic.exe ..\src\GUI-QT\qt2\GeneralSettingsDlgbase.ui -o moc\GeneralSettingsDlgbase.h
+$(QTDIR)\bin\uic.exe ..\src\GUI-QT\qt2\GeneralSettingsDlgbase.ui -i GeneralSettingsDlgbase.h -o moc\GeneralSettingsDlgbase.cpp
+$(QTDIR)\bin\moc.exe moc\GeneralSettingsDlgbase.h -o moc\moc_GeneralSettingsDlgbase.cpp
+</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">moc\GeneralSettingsDlgbase.h;moc\GeneralSettingsDlgbase.cpp;moc\moc_GeneralSettingsDlgbase.cpp;%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Uic%27ing ..\src\GUI-QT\qt2\GeneralSettingsDlgbase.ui...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\uic.exe ..\src\GUI-QT\qt2\GeneralSettingsDlgbase.ui -o moc\GeneralSettingsDlgbase.h
+$(QTDIR)\bin\uic.exe ..\src\GUI-QT\qt2\GeneralSettingsDlgbase.ui -i GeneralSettingsDlgbase.h -o moc\GeneralSettingsDlgbase.cpp
+$(QTDIR)\bin\moc.exe moc\GeneralSettingsDlgbase.h -o moc\moc_GeneralSettingsDlgbase.cpp
+</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">moc\GeneralSettingsDlgbase.h;moc\GeneralSettingsDlgbase.cpp;moc\moc_GeneralSettingsDlgbase.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\src\GUI-QT\qt2\LiveScheduleDlgbase.ui">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Uic%27ing ..\src\GUI-QT\qt2\LiveScheduleDlgbase.ui...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\uic.exe ..\src\GUI-QT\qt2\LiveScheduleDlgbase.ui -o moc\LiveScheduleDlgbase.h
+$(QTDIR)\bin\uic.exe ..\src\GUI-QT\qt2\LiveScheduleDlgbase.ui -i LiveScheduleDlgbase.h -o moc\LiveScheduleDlgbase.cpp
+$(QTDIR)\bin\moc.exe moc\LiveScheduleDlgbase.h -o moc\moc_LiveScheduleDlgbase.cpp
+</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">moc\LiveScheduleDlgbase.h;moc\LiveScheduleDlgbase.cpp;moc\moc_LiveScheduleDlgbase.cpp;%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Uic%27ing ..\src\GUI-QT\qt2\LiveScheduleDlgbase.ui...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\uic.exe ..\src\GUI-QT\qt2\LiveScheduleDlgbase.ui -o moc\LiveScheduleDlgbase.h
+$(QTDIR)\bin\uic.exe ..\src\GUI-QT\qt2\LiveScheduleDlgbase.ui -i LiveScheduleDlgbase.h -o moc\LiveScheduleDlgbase.cpp
+$(QTDIR)\bin\moc.exe moc\LiveScheduleDlgbase.h -o moc\moc_LiveScheduleDlgbase.cpp
+</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">moc\LiveScheduleDlgbase.h;moc\LiveScheduleDlgbase.cpp;moc\moc_LiveScheduleDlgbase.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\src\GUI-QT\qt2\MultimediaDlgbase.ui">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Uic%27ing ..\src\GUI-QT\qt2\MultimediaDlgbase.ui...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\uic.exe ..\src\GUI-QT\qt2\MultimediaDlgbase.ui -o moc\MultimediaDlgbase.h
+$(QTDIR)\bin\uic.exe ..\src\GUI-QT\qt2\MultimediaDlgbase.ui -i MultimediaDlgbase.h -o moc\MultimediaDlgbase.cpp
+$(QTDIR)\bin\moc.exe moc\MultimediaDlgbase.h -o moc\moc_MultimediaDlgbase.cpp
+</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">moc\MultimediaDlgbase.h;moc\MultimediaDlgbase.cpp;moc\moc_MultimediaDlgbase.cpp;%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Uic%27ing ..\src\GUI-QT\qt2\MultimediaDlgbase.ui...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\uic.exe ..\src\GUI-QT\qt2\MultimediaDlgbase.ui -o moc\MultimediaDlgbase.h
+$(QTDIR)\bin\uic.exe ..\src\GUI-QT\qt2\MultimediaDlgbase.ui -i MultimediaDlgbase.h -o moc\MultimediaDlgbase.cpp
+$(QTDIR)\bin\moc.exe moc\MultimediaDlgbase.h -o moc\moc_MultimediaDlgbase.cpp
+</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">moc\MultimediaDlgbase.h;moc\MultimediaDlgbase.cpp;moc\moc_MultimediaDlgbase.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\src\GUI-QT\qt2\MultSettingsDlgbase.ui">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Uic%27ing ..\src\GUI-QT\qt2\MultSettingsDlgbase.ui...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\uic.exe ..\src\GUI-QT\qt2\MultSettingsDlgbase.ui -o moc\MultSettingsDlgbase.h
+$(QTDIR)\bin\uic.exe ..\src\GUI-QT\qt2\MultSettingsDlgbase.ui -i MultSettingsDlgbase.h -o moc\MultSettingsDlgbase.cpp
+$(QTDIR)\bin\moc.exe moc\MultSettingsDlgbase.h -o moc\moc_MultSettingsDlgbase.cpp
+</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">moc\MultSettingsDlgbase.h;moc\MultSettingsDlgbase.cpp;moc\moc_MultSettingsDlgbase.cpp;%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Uic%27ing ..\src\GUI-QT\qt2\MultSettingsDlgbase.ui...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\uic.exe ..\src\GUI-QT\qt2\MultSettingsDlgbase.ui -o moc\MultSettingsDlgbase.h
+$(QTDIR)\bin\uic.exe ..\src\GUI-QT\qt2\MultSettingsDlgbase.ui -i MultSettingsDlgbase.h -o moc\MultSettingsDlgbase.cpp
+$(QTDIR)\bin\moc.exe moc\MultSettingsDlgbase.h -o moc\moc_MultSettingsDlgbase.cpp
+</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">moc\MultSettingsDlgbase.h;moc\MultSettingsDlgbase.cpp;moc\moc_MultSettingsDlgbase.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\src\GUI-QT\qt2\StationsDlgbase.ui">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Uic%27ing ..\src\GUI-QT\qt2\StationsDlgbase.ui...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\uic.exe ..\src\GUI-QT\qt2\StationsDlgbase.ui -o moc\StationsDlgbase.h
+$(QTDIR)\bin\uic.exe ..\src\GUI-QT\qt2\StationsDlgbase.ui -i StationsDlgbase.h -o moc\StationsDlgbase.cpp
+$(QTDIR)\bin\moc.exe moc\StationsDlgbase.h -o moc\moc_StationsDlgbase.cpp
+</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">moc\StationsDlgbase.h;moc\StationsDlgbase.cpp;moc\moc_StationsDlgbase.cpp;%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Uic%27ing ..\src\GUI-QT\qt2\StationsDlgbase.ui...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\uic.exe ..\src\GUI-QT\qt2\StationsDlgbase.ui -o moc\StationsDlgbase.h
+$(QTDIR)\bin\uic.exe ..\src\GUI-QT\qt2\StationsDlgbase.ui -i StationsDlgbase.h -o moc\StationsDlgbase.cpp
+$(QTDIR)\bin\moc.exe moc\StationsDlgbase.h -o moc\moc_StationsDlgbase.cpp
+</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">moc\StationsDlgbase.h;moc\StationsDlgbase.cpp;moc\moc_StationsDlgbase.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\src\GUI-QT\qt2\systemevalDlgbase.ui">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Uic%27ing ..\src\GUI-QT\qt2\systemevalDlgbase.ui...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\uic.exe ..\src\GUI-QT\qt2\systemevalDlgbase.ui -o moc\systemevalDlgbase.h
+$(QTDIR)\bin\uic.exe ..\src\GUI-QT\qt2\systemevalDlgbase.ui -i systemevalDlgbase.h -o moc\systemevalDlgbase.cpp
+$(QTDIR)\bin\moc.exe moc\systemevalDlgbase.h -o moc\moc_systemevalDlgbase.cpp
+</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">moc\systemevalDlgbase.h;moc\systemevalDlgbase.cpp;moc\moc_systemevalDlgbase.cpp;%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Uic%27ing ..\src\GUI-QT\qt2\systemevalDlgbase.ui...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\uic.exe ..\src\GUI-QT\qt2\systemevalDlgbase.ui -o moc\systemevalDlgbase.h
+$(QTDIR)\bin\uic.exe ..\src\GUI-QT\qt2\systemevalDlgbase.ui -i systemevalDlgbase.h -o moc\systemevalDlgbase.cpp
+$(QTDIR)\bin\moc.exe moc\systemevalDlgbase.h -o moc\moc_systemevalDlgbase.cpp
+</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">moc\systemevalDlgbase.h;moc\systemevalDlgbase.cpp;moc\moc_systemevalDlgbase.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\src\GUI-QT\qt2\TransmDlgbase.ui">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Uic%27ing ..\src\GUI-QT\qt2\TransmDlgbase.ui...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\uic.exe ..\src\GUI-QT\qt2\TransmDlgbase.ui -o moc\TransmDlgbase.h
+$(QTDIR)\bin\uic.exe ..\src\GUI-QT\qt2\TransmDlgbase.ui -i TransmDlgbase.h -o moc\TransmDlgbase.cpp
+$(QTDIR)\bin\moc.exe moc\TransmDlgbase.h -o moc\moc_TransmDlgbase.cpp
+</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">moc\TransmDlgbase.h;moc\TransmDlgbase.cpp;moc\moc_TransmDlgbase.cpp;%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Uic%27ing ..\src\GUI-QT\qt2\TransmDlgbase.ui...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\uic.exe ..\src\GUI-QT\qt2\TransmDlgbase.ui -o moc\TransmDlgbase.h
+$(QTDIR)\bin\uic.exe ..\src\GUI-QT\qt2\TransmDlgbase.ui -i TransmDlgbase.h -o moc\TransmDlgbase.cpp
+$(QTDIR)\bin\moc.exe moc\TransmDlgbase.h -o moc\moc_TransmDlgbase.cpp
+</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">moc\TransmDlgbase.h;moc\TransmDlgbase.cpp;moc\moc_TransmDlgbase.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="dream.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

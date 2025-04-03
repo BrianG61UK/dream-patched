@@ -1,0 +1,86 @@
+^J:\GITHUB\DREAM-PATCHED\SRC\GUI-QT\ANALOGDEMDLG.H
+\bin\moc.exe ..\src\GUI-QT\AnalogDemDlg.h -o moc\moc_AnalogDemDlg.cpp
+^J:\GITHUB\DREAM-PATCHED\SRC\GUI-QT\DIALOGUTIL.H
+\bin\moc.exe ..\src\GUI-QT\DialogUtil.h -o moc\moc_DialogUtil.cpp
+^J:\GITHUB\DREAM-PATCHED\SRC\GUI-QT\EPGDLG.H
+\bin\moc.exe ..\src\GUI-QT\EPGDlg.h -o moc\moc_EPGDlg.cpp
+^J:\GITHUB\DREAM-PATCHED\SRC\GUI-QT\FDRMDIALOG.H
+\bin\moc.exe ..\src\GUI-QT\fdrmdialog.h -o moc\moc_fdrmdialog.cpp
+^J:\GITHUB\DREAM-PATCHED\SRC\GUI-QT\FMDIALOG.H
+\bin\moc.exe ..\src\GUI-QT\fmdialog.h -o moc\moc_fmdialog.cpp
+^J:\GITHUB\DREAM-PATCHED\SRC\GUI-QT\GENERALSETTINGSDLG.H
+\bin\moc.exe ..\src\GUI-QT\GeneralSettingsDlg.h -o moc\moc_GeneralSettingsDlg.cpp
+^J:\GITHUB\DREAM-PATCHED\SRC\GUI-QT\LIVESCHEDULEDLG.H
+\bin\moc.exe ..\src\GUI-QT\LiveScheduleDlg.h -o moc\moc_LiveScheduleDlg.cpp
+^J:\GITHUB\DREAM-PATCHED\SRC\GUI-QT\LOGGING.H
+\bin\moc.exe ..\src\GUI-QT\Logging.h -o moc\moc_Logging.cpp
+^J:\GITHUB\DREAM-PATCHED\SRC\GUI-QT\MULTCOLORLED.H
+\bin\moc.exe ..\src\GUI-QT\MultColorLED.h -o moc\moc_MultColorLED.cpp
+^J:\GITHUB\DREAM-PATCHED\SRC\GUI-QT\MULTIMEDIADLG.H
+\bin\moc.exe ..\src\GUI-QT\MultimediaDlg.h -o moc\moc_MultimediaDlg.cpp
+^J:\GITHUB\DREAM-PATCHED\SRC\GUI-QT\MULTSETTINGSDLG.H
+\bin\moc.exe ..\src\GUI-QT\MultSettingsDlg.h -o moc\moc_MultSettingsDlg.cpp
+^J:\GITHUB\DREAM-PATCHED\SRC\GUI-QT\QT2\DRMPLOT.H
+\bin\moc.exe ..\src\GUI-QT\qt2\DRMPlot.h -o moc\moc_DRMPlot.cpp
+^J:\GITHUB\DREAM-PATCHED\SRC\GUI-QT\RIG.H
+\bin\moc.exe ..\src\GUI-QT\Rig.h -o moc\moc_Rig.cpp
+^J:\GITHUB\DREAM-PATCHED\SRC\GUI-QT\STATIONSDLG.H
+\bin\moc.exe ..\src\GUI-QT\StationsDlg.h -o moc\moc_StationsDlg.cpp
+^J:\GITHUB\DREAM-PATCHED\SRC\GUI-QT\SYSTEMEVALDLG.H
+\bin\moc.exe ..\src\GUI-QT\systemevalDlg.h -o moc\moc_systemevalDlg.cpp
+^J:\GITHUB\DREAM-PATCHED\SRC\GUI-QT\TRANSMDLG.H
+\bin\moc.exe ..\src\GUI-QT\TransmDlg.h -o moc\moc_TransmDlg.cpp
+^J:\GITHUB\DREAM-PATCHED\SRC\MDI\PACKETSOCKETQT.H
+\bin\moc.exe ..\src\MDI\PacketSocketQT.h -o moc\moc_PacketSocketQT.cpp
+^J:\GITHUB\DREAM-PATCHED\SRC\GUI-QT\QT2\ABOUTDLGBASE.UI
+\bin\uic.exe ..\src\GUI-QT\qt2\AboutDlgbase.ui -o moc\AboutDlgbase.h
+\bin\uic.exe ..\src\GUI-QT\qt2\AboutDlgbase.ui -i AboutDlgbase.h -o moc\AboutDlgbase.cpp
+\bin\moc.exe moc\AboutDlgbase.h -o moc\moc_AboutDlgbase.cpp
+^J:\GITHUB\DREAM-PATCHED\SRC\GUI-QT\QT2\AMSSDLGBASE.UI
+\bin\uic.exe ..\src\GUI-QT\qt2\AMSSDlgbase.ui -o moc\AMSSDlgbase.h
+\bin\uic.exe ..\src\GUI-QT\qt2\AMSSDlgbase.ui -i AMSSDlgbase.h -o moc\AMSSDlgbase.cpp
+\bin\moc.exe moc\AMSSDlgbase.h -o moc\moc_AMSSDlgbase.cpp
+^J:\GITHUB\DREAM-PATCHED\SRC\GUI-QT\QT2\ANALOGDEMDLGBASE.UI
+\bin\uic.exe ..\src\GUI-QT\qt2\AnalogDemDlgbase.ui -o moc\AnalogDemDlgbase.h
+\bin\uic.exe ..\src\GUI-QT\qt2\AnalogDemDlgbase.ui -i AnalogDemDlgbase.h -o moc\AnalogDemDlgbase.cpp
+\bin\moc.exe moc\AnalogDemDlgbase.h -o moc\moc_AnalogDemDlgbase.cpp
+^J:\GITHUB\DREAM-PATCHED\SRC\GUI-QT\QT2\EPGDLGBASE.UI
+\bin\uic.exe ..\src\GUI-QT\qt2\EPGDlgbase.ui -o moc\EPGDlgbase.h
+\bin\uic.exe ..\src\GUI-QT\qt2\EPGDlgbase.ui -i EPGDlgbase.h -o moc\EPGDlgbase.cpp
+\bin\moc.exe moc\EPGDlgbase.h -o moc\moc_EPGDlgbase.cpp
+^J:\GITHUB\DREAM-PATCHED\SRC\GUI-QT\QT2\FDRMDIALOGBASE.UI
+\bin\uic.exe ..\src\GUI-QT\qt2\fdrmdialogbase.ui -o moc\fdrmdialogbase.h
+\bin\uic.exe ..\src\GUI-QT\qt2\fdrmdialogbase.ui -i fdrmdialogbase.h -o moc\fdrmdialogbase.cpp
+\bin\moc.exe moc\fdrmdialogbase.h -o moc\moc_fdrmdialogbase.cpp
+^J:\GITHUB\DREAM-PATCHED\SRC\GUI-QT\QT2\FMDIALOGBASE.UI
+\bin\uic.exe ..\src\GUI-QT\qt2\fmdialogbase.ui -o moc\fmdialogbase.h
+\bin\uic.exe ..\src\GUI-QT\qt2\fmdialogbase.ui -i fmdialogbase.h -o moc\fmdialogbase.cpp
+\bin\moc.exe moc\fmdialogbase.h -o moc\moc_fmdialogbase.cpp
+^J:\GITHUB\DREAM-PATCHED\SRC\GUI-QT\QT2\GENERALSETTINGSDLGBASE.UI
+\bin\uic.exe ..\src\GUI-QT\qt2\GeneralSettingsDlgbase.ui -o moc\GeneralSettingsDlgbase.h
+\bin\uic.exe ..\src\GUI-QT\qt2\GeneralSettingsDlgbase.ui -i GeneralSettingsDlgbase.h -o moc\GeneralSettingsDlgbase.cpp
+\bin\moc.exe moc\GeneralSettingsDlgbase.h -o moc\moc_GeneralSettingsDlgbase.cpp
+^J:\GITHUB\DREAM-PATCHED\SRC\GUI-QT\QT2\LIVESCHEDULEDLGBASE.UI
+\bin\uic.exe ..\src\GUI-QT\qt2\LiveScheduleDlgbase.ui -o moc\LiveScheduleDlgbase.h
+\bin\uic.exe ..\src\GUI-QT\qt2\LiveScheduleDlgbase.ui -i LiveScheduleDlgbase.h -o moc\LiveScheduleDlgbase.cpp
+\bin\moc.exe moc\LiveScheduleDlgbase.h -o moc\moc_LiveScheduleDlgbase.cpp
+^J:\GITHUB\DREAM-PATCHED\SRC\GUI-QT\QT2\MULTIMEDIADLGBASE.UI
+\bin\uic.exe ..\src\GUI-QT\qt2\MultimediaDlgbase.ui -o moc\MultimediaDlgbase.h
+\bin\uic.exe ..\src\GUI-QT\qt2\MultimediaDlgbase.ui -i MultimediaDlgbase.h -o moc\MultimediaDlgbase.cpp
+\bin\moc.exe moc\MultimediaDlgbase.h -o moc\moc_MultimediaDlgbase.cpp
+^J:\GITHUB\DREAM-PATCHED\SRC\GUI-QT\QT2\MULTSETTINGSDLGBASE.UI
+\bin\uic.exe ..\src\GUI-QT\qt2\MultSettingsDlgbase.ui -o moc\MultSettingsDlgbase.h
+\bin\uic.exe ..\src\GUI-QT\qt2\MultSettingsDlgbase.ui -i MultSettingsDlgbase.h -o moc\MultSettingsDlgbase.cpp
+\bin\moc.exe moc\MultSettingsDlgbase.h -o moc\moc_MultSettingsDlgbase.cpp
+^J:\GITHUB\DREAM-PATCHED\SRC\GUI-QT\QT2\STATIONSDLGBASE.UI
+\bin\uic.exe ..\src\GUI-QT\qt2\StationsDlgbase.ui -o moc\StationsDlgbase.h
+\bin\uic.exe ..\src\GUI-QT\qt2\StationsDlgbase.ui -i StationsDlgbase.h -o moc\StationsDlgbase.cpp
+\bin\moc.exe moc\StationsDlgbase.h -o moc\moc_StationsDlgbase.cpp
+^J:\GITHUB\DREAM-PATCHED\SRC\GUI-QT\QT2\SYSTEMEVALDLGBASE.UI
+\bin\uic.exe ..\src\GUI-QT\qt2\systemevalDlgbase.ui -o moc\systemevalDlgbase.h
+\bin\uic.exe ..\src\GUI-QT\qt2\systemevalDlgbase.ui -i systemevalDlgbase.h -o moc\systemevalDlgbase.cpp
+\bin\moc.exe moc\systemevalDlgbase.h -o moc\moc_systemevalDlgbase.cpp
+^J:\GITHUB\DREAM-PATCHED\SRC\GUI-QT\QT2\TRANSMDLGBASE.UI
+\bin\uic.exe ..\src\GUI-QT\qt2\TransmDlgbase.ui -o moc\TransmDlgbase.h
+\bin\uic.exe ..\src\GUI-QT\qt2\TransmDlgbase.ui -i TransmDlgbase.h -o moc\TransmDlgbase.cpp
+\bin\moc.exe moc\TransmDlgbase.h -o moc\moc_TransmDlgbase.cpp

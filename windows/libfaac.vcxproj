@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <ProjectName>faac_drm</ProjectName>
+    <ProjectGuid>{11CA1C2C-05BA-4EC7-8FD0-670241B89110}</ProjectGuid>
+    <RootNamespace>libfaac</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>17.0.35913.81</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>..\libs\</OutDir>
+    <IntDir>Debug\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>..\libs\</OutDir>
+    <IntDir>Release\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <BuildLog>
+      <Path>$(IntDir)FaacBuildLog.htm</Path>
+    </BuildLog>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..\faac\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;DRM;FAACAPI=__stdcall;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+      <DisableSpecificWarnings>4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ProjectReference>
+      <LinkLibraryDependencies>true</LinkLibraryDependencies>
+    </ProjectReference>
+    <Lib>
+      <OutputFile>$(OutDir)$(ProjectName)d.lib</OutputFile>
+    </Lib>
+    <PostBuildEvent>
+      <Command>copy ..\..\faac\include\faac.h ..\libs
+copy ..\..\faac\include\faaccfg.h ..\libs
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <BuildLog>
+      <Path>$(IntDir)FaacBuildLog.htm</Path>
+    </BuildLog>
+    <ClCompile>
+      <Optimization>Full</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
+      <AdditionalIncludeDirectories>..\libs;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NDEBUG;_LIB;DRM;FAACAPI=__stdcall;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <MinimalRebuild>true</MinimalRebuild>
+      <SmallerTypeCheck>false</SmallerTypeCheck>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <PrecompiledHeader />
+      <ProgramDataBaseFileName>$(IntDir)faacvc90.pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <CompileAs>Default</CompileAs>
+      <DisableSpecificWarnings>4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ProjectReference>
+      <LinkLibraryDependencies>true</LinkLibraryDependencies>
+    </ProjectReference>
+    <Lib>
+      <AdditionalLibraryDirectories>$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Lib>
+    <PostBuildEvent>
+      <Command>copy ..\..\faac\include\faac.h ..\libs
+copy ..\..\faac\include\faaccfg.h ..\libs
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\faac\include\faac.h" />
+    <ClInclude Include="..\..\faac\include\faaccfg.h" />
+    <ClInclude Include="..\..\faac\libfaac\aacquant.h" />
+    <ClInclude Include="..\..\faac\libfaac\backpred.h" />
+    <ClInclude Include="..\..\faac\libfaac\bitstream.h" />
+    <ClInclude Include="..\..\faac\libfaac\channels.h" />
+    <ClInclude Include="..\..\faac\libfaac\coder.h" />
+    <ClInclude Include="..\..\faac\libfaac\fft.h" />
+    <ClInclude Include="..\..\faac\libfaac\filtbank.h" />
+    <ClInclude Include="..\..\faac\libfaac\frame.h" />
+    <ClInclude Include="..\..\faac\libfaac\huffman.h" />
+    <ClInclude Include="..\..\faac\libfaac\hufftab.h" />
+    <ClInclude Include="..\..\faac\libfaac\kiss_fft\kiss_fft.h" />
+    <ClInclude Include="..\..\faac\libfaac\kiss_fft\kiss_fftr.h" />
+    <ClInclude Include="..\..\faac\libfaac\kiss_fft\_kiss_fft_guts.h" />
+    <ClInclude Include="..\..\faac\libfaac\ltp.h" />
+    <ClInclude Include="..\..\faac\libfaac\midside.h" />
+    <ClInclude Include="..\..\faac\libfaac\psych.h" />
+    <ClInclude Include="..\..\faac\libfaac\tns.h" />
+    <ClInclude Include="..\..\faac\libfaac\util.h" />
+    <ClInclude Include="..\..\faac\libfaac\version.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\faac\libfaac\aacquant.c" />
+    <ClCompile Include="..\..\faac\libfaac\backpred.c" />
+    <ClCompile Include="..\..\faac\libfaac\bitstream.c" />
+    <ClCompile Include="..\..\faac\libfaac\channels.c" />
+    <ClCompile Include="..\..\faac\libfaac\fft.c" />
+    <ClCompile Include="..\..\faac\libfaac\filtbank.c" />
+    <ClCompile Include="..\..\faac\libfaac\frame.c" />
+    <ClCompile Include="..\..\faac\libfaac\huffman.c" />
+    <ClCompile Include="..\..\faac\libfaac\kiss_fft\kiss_fft.c" />
+    <ClCompile Include="..\..\faac\libfaac\kiss_fft\kiss_fftr.c" />
+    <ClCompile Include="..\..\faac\libfaac\ltp.c" />
+    <ClCompile Include="..\..\faac\libfaac\midside.c" />
+    <ClCompile Include="..\..\faac\libfaac\psychkni.c" />
+    <ClCompile Include="..\..\faac\libfaac\tns.c" />
+    <ClCompile Include="..\..\faac\libfaac\util.c" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
